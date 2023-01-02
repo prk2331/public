@@ -131,6 +131,8 @@
             	// init for first-time loads
     			var queueProcessor = function() {
             		var len = queueTracking.length;
+					console.log("what is queueTracking", queueTracking);
+					console.log("queueTracking.length", len);
             		while(len > 0) { 
             			var data = queueTracking.pop(); 
             			LeoEventObserver.doTracking(data.eventType, data.params);
