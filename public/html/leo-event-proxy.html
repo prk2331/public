@@ -17,6 +17,7 @@
             ROOT_DOMAIN = toks[0];
 			console.log("root domain", ROOT_DOMAIN);
             PARENT_ORIGIN = toks[1];
+			console.log("parent origin", PARENT_ORIGIN);
             
             // injection from server
             if(toks.length === 3){
@@ -114,6 +115,7 @@
     	
     	var codeIsReady = function() {
     		// call Fingerprint then do the jobs
+			console.log("codeisready", codeIsReady);
     		LeoEventObserver.initFingerprint(function(fingerprintId){
     			
     			// synch LEO visitor ID 
@@ -153,7 +155,8 @@
     		});
     	}
 
-    	var isDev = ROOT_DOMAIN === "demotrack.leocdp.net";
+    	//var isDev = ROOT_DOMAIN === "demotrack.leocdp.net";
+		var isDev = ROOT_DOMAIN === "prk2331.github.io";
   		var cbKey = "aug16.2021";
   		
 	   	var leoObserverJsUrl = "https://cdn.jsdelivr.net/gh/USPA-Technology/leo-cdp-static-files/js/leo-observer/leo.observer.min.js?cb="+cbKey;
@@ -163,7 +166,7 @@
             console.log("leo CDP is in dev mode");
   	    	leoObserverJsUrl = "https://demotrack.leocdp.net/public/js/leo-observer/leo.observer.js?cb="+cbKey;
   		}
-    	
+    	console.log("leoobserverurl", leoObserverJsUrl);
   		loadScript(leoObserverJsUrl, codeIsReady);
     </script>
 </body>
