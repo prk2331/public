@@ -23,6 +23,7 @@
             if(toks.length === 3){
             	var tok = toks[2];
             	if(typeof tok === "string" && tok.length > 20 ){
+					console.log("Injectedvisitorid", INJECTED_VISITOR_ID);
             		INJECTED_VISITOR_ID = tok;
             	}
             }
