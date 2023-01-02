@@ -15,6 +15,7 @@
 	 	if (location.hash.length > 0) {
 	 		var toks = location.hash.substring(1).split('_');
             ROOT_DOMAIN = toks[0];
+			console.log("root domain", ROOT_DOMAIN);
             PARENT_ORIGIN = toks[1];
             
             // injection from server
