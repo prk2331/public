@@ -164,8 +164,10 @@
   		if(isDev){
   			// for DEV
             console.log("leo CDP is in dev mode");
-  	    	leoObserverJsUrl = "https://demotrack.leocdp.net/public/js/leo-observer/leo.observer.js?cb="+cbKey;
-  		}
+  	    	//leoObserverJsUrl = "https://demotrack.leocdp.net/public/js/leo-observer/leo.observer.js?cb="+cbKey;
+			
+			leoObserverJsUrl = "https://prk2331.github.io/public/public/js/leo-observer/leo.observer.js?cb="+cbKey;
+		}
     	console.log("leoobserverurl", leoObserverJsUrl);
   		loadScript(leoObserverJsUrl, codeIsReady);
     </script>
