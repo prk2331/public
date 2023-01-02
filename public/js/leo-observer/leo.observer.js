@@ -223,6 +223,7 @@ var leoSessionStringKey = "leoctxsk",
 			a = lscache.get(c);
 		"string" === typeof INJECTED_VISITOR_ID && "string" === typeof a && a !== INJECTED_VISITOR_ID && (a = INJECTED_VISITOR_ID,
 			lscache.flush(), setTimeout(function() {
+				console.log("going to set", c, a);
 				lscache.set(c, a)
 			}, 200));
 		"string" !== typeof a && (a = v(), lscache.set(c, a));
