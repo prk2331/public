@@ -61,6 +61,7 @@
 	function q() {
 		if (void 0 !== k) return k;
 		console.log("Anon fn 1", window.localStorage);
+		console.log("lscache", lscache);
 		if ("object" !== typeof window.localStorage) return !1;
 		try {
 			v("__lscachetest__", "__lscachetest__"), l("__lscachetest__"), k = !0
