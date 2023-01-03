@@ -270,6 +270,7 @@ var leoSessionStringKey = "leoctxsk",
 			c = r(c);
 			var a = l();
             console.log("leocorerequest url getcontextsession");
+			console.log("inside a", a);
 			LeoCorsRequest.get(!1, PREFIX_SESSION_INIT_URL + "?" + c + "&visid=" + a, [], function(d, k) {
 				var g = JSON.parse(k);
 				if (101 === g.status) {
