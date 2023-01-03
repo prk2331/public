@@ -17,6 +17,7 @@
 	}
 
 	function l(e) {
+		console.log("get in e", e);
 		return 0 == e.status || 200 <= e.status && 300 > e.status || 304 == e.status || 1223 == e.status
 	}
 	q.LeoCorsRequest = {
