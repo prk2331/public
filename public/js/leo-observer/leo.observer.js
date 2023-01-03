@@ -60,10 +60,12 @@
 })(this, function() {
 	function q() {
 		if (void 0 !== k) return k;
+		console.log("Anon fn 1", window.localStorage);
 		if ("object" !== typeof window.localStorage) return !1;
 		try {
 			v("__lscachetest__", "__lscachetest__"), l("__lscachetest__"), k = !0
 		} catch (b) {
+			console.log("Anon fn 2", localStorage.length);
 			k = w(b) && localStorage.length ? !0 : !1
 		}
 		return k
@@ -80,17 +82,20 @@
 	}
 
 	function v(b, h) {
+		console.log("V local storage reflection", f, b, h);
 		localStorage.removeItem("leocache-" + f + b);
 		localStorage.setItem("leocache-" + f + b, h)
 	}
 
 	function l(b) {
+		console.log("L local storage reflection", f, b);
 		localStorage.removeItem("leocache-" + f + b)
 	}
 
 	function e(b) {
 		for (var h = new RegExp("^leocache-" + f.replace(/[[\]{}()*+?.\\^$|]/g, "\\$&") + "(.*)"), t = localStorage.length - 1; 0 <= t; --t) {
 			var p = localStorage.key(t);
+			console.log("E local storage reflection", p);
 			(p = (p = p && p.match(h)) && p[1]) && 0 > p.indexOf("-cacheexpiration") && b(p, p + "-cacheexpiration")
 		}
 	}
@@ -105,6 +110,7 @@
 		var h =
 			b + "-cacheexpiration",
 			t = localStorage.getItem("leocache-" + f + h);
+			console.log("R local storage reflection", t)
 		if (t && (t = parseInt(t, 10), Math.floor((new Date).getTime() / a) >= t)) return l(b), l(h), !0
 	}
 
@@ -130,7 +136,9 @@
 					var p = [];
 					e(function(x, A) {
 						var y = localStorage.getItem("leocache-" + f + A);
+						console.log("Y local storage reflection getItem leocache-", f, A);
 						y = y ? parseInt(y, 10) : d;
+						console.log("Y2 local storage reflection getItem leocache-", f, x);
 						p.push({
 							key: x,
 							size: (localStorage.getItem("leocache-" + f + x) || "").length,
@@ -159,7 +167,9 @@
 		},
 		get: function(b) {
 			if (!q() || r(b)) return null;
+			console.log("get method leocache-", f, b);
 			b = localStorage.getItem("leocache-" + f + b);
+			
 			if (!b || !u()) return b;
 			try {
 				return JSON.parse(b)
