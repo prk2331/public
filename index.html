@@ -63,5 +63,21 @@
     </head>
     <body>
         <h1>Welcome</h1>
+        <button onclick="myFunction()">Click me</button>
+        <script>
+            function myFunction() {
+                var productId = location.pathname.replace("/eshop/","")
+                var idType = "external_ID";
+                var quantity =  1;
+                var currency =  "VND";
+                var eventName = "add-to-cart";
+
+                var transactionId = "";
+                var eventData = { "productIds": productId, "idType": idType };
+                var shoppingItems = [{ "itemtId": productId, "idType": idType, quantity: quantity }];
+
+                LeoObserverProxy.recordConversionEvent(eventName, eventData,transactionId, shoppingItems,0, currency);
+            }
+            </script>
     </body>
 </html>
