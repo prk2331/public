@@ -256,7 +256,8 @@ var leoSessionStringKey = "leoctxsk",
 		a.visid = l();
 		a = r(a);
 		var k = u();
-		if (k) {
+		// comment it for debug
+		//if (k) {
 			var g = !1,
 				f = PREFIX_EVENT_VIEW_URL;
 			"action" === c ? f = PREFIX_EVENT_ACTION_URL :
@@ -264,7 +265,8 @@ var leoSessionStringKey = "leoctxsk",
 			c = "";
 			g ? (c = f + "?ctxsk=" + k, LeoCorsRequest.post(!1, c, [], a, d)) : (c = f + "?" + a + "&ctxsk=" + k, LeoCorsRequest.get(!1, c, [], d));
 			console.log("LeoCorsRequest url " + c)
-		} else console.log("sessionKey is NULL")
+		// comment it for debug
+		//} else console.log("sessionKey is NULL")
 	};
 	e.getContextSession = function(c) {
 		if ("string" !== typeof u()) {
