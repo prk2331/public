@@ -297,6 +297,7 @@ var leoSessionStringKey = "leoctxsk",
 		LeoCorsRequest.post(!1, PREFIX_UPDATE_PROFILE_URL + "?ctxsk=" + a, [], c, function(d, k) {})
 	};
 	e.initFingerprint = function(c) {
+		console.log("Initfingerprint triggered", c);
 		Fingerprint2.get({
 				excludes: {
 					enumerateDevices: !0,
@@ -308,6 +309,7 @@ var leoSessionStringKey = "leoctxsk",
 					return d.value
 				});
 				a = Fingerprint2.x64hash128(a.join(""), 31);
+				console.log("Fingerprint method call", a);
 				lscache.set("leocdp_fgp", a);
 				e.fingerprintId = a;
 				"function" === typeof c && c(a)
