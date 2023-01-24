@@ -226,6 +226,7 @@ var leoSessionStringKey = "leoctxsk",
 		return "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, function(a) {
 			var d = (c + 16 * Math.random()) % 16 | 0;
 			c = Math.floor(c / 16);
+			console.log("WARNINGWARNINGWARNING-CREATING-NEW**", ("x" == a ? d : d & 3 | 8).toString(16));
 			return ("x" == a ? d : d & 3 | 8).toString(16)
 		})
 	}
