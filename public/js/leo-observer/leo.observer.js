@@ -29,6 +29,7 @@
 			var a = null,
 				d = function() {
 					if (0 == a.readyState || 4 == a.readyState)
+					    console.log("m2");
 						if (l(a)) {
 							for (var k = {}, g = 0; g < r.length; g++) {
 								var f = r[g],
