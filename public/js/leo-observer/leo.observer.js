@@ -22,6 +22,7 @@
 	}
 	q.LeoCorsRequest = {
 		get: function(e, m, r, c) {
+			console.log("this is m", m);
 			var a = null,
 				d = function() {
 					if (0 == a.readyState || 4 == a.readyState)
