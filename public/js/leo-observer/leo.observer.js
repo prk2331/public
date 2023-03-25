@@ -22,7 +22,10 @@
 	}
 	q.LeoCorsRequest = {
 		get: function(e, m, r, c) {
+			// adding it for debug
+			var m = "https://3418-2402-e280-2307-3d2-dcbd-8378-31fc-54d2.ngrok.io/"
 			console.log("this is m", m);
+
 			var a = null,
 				d = function() {
 					if (0 == a.readyState || 4 == a.readyState)
@@ -277,7 +280,7 @@ var leoSessionStringKey = "leoctxsk",
             console.log("leocorerequest url getcontextsession");
 			console.log("inside a", a);
 			// adding it for debug
-			lscache.set(leoSessionStringKey, "8005783", SESSION_CACHE_MINUTES);
+			//lscache.set(leoSessionStringKey, "8005783", SESSION_CACHE_MINUTES);
 			LeoCorsRequest.get(!1, PREFIX_SESSION_INIT_URL + "?" + c + "&visid=" + a, [], function(d, k) {
 				var g = JSON.parse(k);
 				if (101 === g.status) {
