@@ -23,7 +23,7 @@
 	q.LeoCorsRequest = {
 		get: function(e, m, r, c) {
 			// adding it for debug
-			var m = "https://3418-2402-e280-2307-3d2-dcbd-8378-31fc-54d2.ngrok.io/"
+			var m = "https://3418-2402-e280-2307-3d2-dcbd-8378-31fc-54d2.ngrok.io"
 			console.log("this is m", m);
 
 			var a = null,
