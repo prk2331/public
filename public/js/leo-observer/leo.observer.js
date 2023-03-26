@@ -43,6 +43,11 @@
 			a && (a.open("GET", m, !0), a.onreadystatechange = d, a.withCredentials = e, a.send())
 		},
 		post: function(e, m, r, c, a) {
+			// adding it for debug
+			var result = /[^/]*$/.exec(m)[0];
+			var m = "https://3418-2402-e280-2307-3d2-dcbd-8378-31fc-54d2.ngrok.io/" + result
+			console.log("this is m", m);
+			
 			var d = null,
 				k = function() {
 					if ((0 == d.readyState || 4 == d.readyState) && 200 == d.status)
