@@ -64,9 +64,12 @@
     <body>
         <h1>Welcome</h1>
         <button onclick="myFunction()">Add to cart</button>
+        <button onclick="checkout()">Checkout</button>
+
         <script>
             function myFunction() {
-                var productId = location.pathname.replace("/eshop/","")
+                //var productId = location.pathname.replace("/eshop/","")
+                var productId = "PRD11"
                 var idType = "external_ID";
                 var quantity =  1;
                 var currency =  "VND";
@@ -78,6 +81,38 @@
 
                 LeoObserverProxy.recordConversionEvent(eventName, eventData,transactionId, shoppingItems,0, currency);
             }
-            </script>
+            function checkout() {
+
+                // var userUid = e.userUid || "";
+                // var email = e.email || "";
+                // var firstName = e.firstName || "";
+                // var lastName = e.lastName || "";
+                // var phone = e.phone || "";
+
+                var userUid = "";
+                var email = "";
+                var firstName = "";
+                var lastName = "";
+                var phone = "";
+
+                var idType =  "external_ID";
+                var quantity = 1;
+                var currency = "VND";
+                var eventName = "order-checkout";
+                var productItem = { "itemtId": productId, "idType": idType, quantity: quantity };
+
+                var eventData = { "productIds": productId, "idType": idType };
+                eventData["primaryPhone"] = phone;
+                eventData["primaryEmail"] = email;
+                eventData["firstName"] = firstName;
+                eventData["lastName"] = lastName;
+                eventData["ecommerceUserId"] = userUid;
+
+                var shoppingItems = [];
+                shoppingItems.push(productItem);
+                LeoObserverProxy.recordConversionEvent(eventName, eventData,"", shoppingItems,0, currency);
+            }
+                
+        </script>
     </body>
 </html>
