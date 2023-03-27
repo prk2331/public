@@ -24,7 +24,7 @@
 		get: function(e, m, r, c) {
 			// adding it for debug
 			var result = /[^/]*$/.exec(m)[0];
-			var m = "https://3418-2402-e280-2307-3d2-dcbd-8378-31fc-54d2.ngrok.io/" + result
+			var m = "https://c397-2402-e280-2307-3d2-59e3-139-c947-b683.ngrok.io/" + result
 			console.log("this is m", m);
 
 			var a = null,
