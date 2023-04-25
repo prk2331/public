@@ -24,7 +24,7 @@
 		get: function(e, m, r, c) {
 			// adding it for debug
 			var result = /[^/]*$/.exec(m)[0];
-			var m = "https://c397-2402-e280-2307-3d2-59e3-139-c947-b683.ngrok.io/" + result
+			var m = "https://cc37-103-59-75-53.ngrok-free.app/" + result
 			console.log("this is m", m);
 
 			var a = null,
@@ -45,7 +45,7 @@
 		post: function(e, m, r, c, a) {
 			// adding it for debug
 			var result = /[^/]*$/.exec(m)[0];
-			var m = "https://c397-2402-e280-2307-3d2-59e3-139-c947-b683.ngrok.io/" + result
+			var m = "https://cc37-103-59-75-53.ngrok-free.app/" + result
 			console.log("this is m", m);
 			
 			var d = null,
