@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>Genome Tracking</title>
+        <script type="text/javascript" id="uni">
+      // Define Segment CDP
+
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="Z37JH6d8gkEqHyZwopkIURkDjmQnCIOw";;analytics.SNIPPET_VERSION="4.15.3";
+        analytics.load("Z37JH6d8gkEqHyZwopkIURkDjmQnCIOw");
+        analytics.page();
+        }}();
+
+
+      // Define the Boxever queue
+      var _boxeverq = _boxeverq || [];
+
+      // Define the Boxever settings
+      var _boxever_settings = {
+          client_key: 'psfu6uh05hsr9c34rptlr06dn864cqrx', // Replace with your client key
+          target: 'https://api.boxever.com/v1.2', // Replace with your API target endpoint specific to your data center region
+          cookie_domain: 'boxever.mytest.com', // Replace with the top level cookie domain of the website that is being integrated e.g ".example.com" and not "www.example.com"
+          web_flow_target: 'https://d35vb5cccm4xzp.cloudfront.net',
+          pointOfSale: 'Virtual-POS-Arvind'
+      };
+      // Import the Boxever library asynchronously
+      (function () {
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = 'https://d1mj578wat5n4o.cloudfront.net/boxever-1.4.8.min.js';
+          var x = document.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+      })();
+
+
+    //   var _paq = window._paq = window._paq || [];
+    // /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    // _paq.push(['trackPageView']);
+    // _paq.push(['enableLinkTracking']);
+    // (function() {
+    //   var u="https://genome123.matomo.cloud/";
+    //   _paq.push(['setTrackerUrl', u+'matomo.php']);
+    //   _paq.push(['setSiteId', '1']);
+    //   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    //   g.async=true; g.src='https://genome123.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    // })();
+
+
+        (function() { 	
+            // Observer ID
+            window.leoObserverId = "3UsJfOzYUXaC5SBfnfnTyQ";
+            
+            // CDN of JS
+            //window.leoObserverLogDomain = "datahub4vnuk.leocdp.net";
+            window.leoObserverLogDomain = "prk2331.github.io";
+            window.leoObserverCdnDomain = "cdn.jsdelivr.net/gh/USPA-Technology/leo-cdp-static-files@v0.8.9.20";
+            
+            // Data Touchpoint Metadata 
+            window.srcTouchpointName = encodeURIComponent(document.title);
+            window.srcTouchpointUrl = encodeURIComponent(location.href);
+
+            // the main proxy LEO JS
+            var leoproxyJsPath = '/js/leo-observer/leo.proxy.min.js';
+            var src = "leo.proxy.min.js";
+            var jsNode = document.createElement('script');
+            jsNode.async=true; jsNode.defer=true; jsNode.src = src;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jsNode, s);
+        })();
+
+  </script>
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <button onclick="myFunction()">Add to cart</button>
+        <button onclick="checkout()">Checkout</button>
+
+        <script>
+            function myFunction() {
+                //var productId = location.pathname.replace("/eshop/","")
+                var productId = "PRD11"
+                var idType = "external_ID";
+                var quantity =  1;
+                var currency =  "VND";
+                var eventName = "add-to-cart";
+
+                var transactionId = "";
+                var eventData = { "productIds": productId, "idType": idType };
+                var shoppingItems = [{ "itemtId": productId, "idType": idType, quantity: quantity }];
+
+                LeoObserverProxy.recordConversionEvent(eventName, eventData,transactionId, shoppingItems,0, currency);
+            }
+            function checkout() {
+
+                // var userUid = e.userUid || "";
+                // var email = e.email || "";
+                // var firstName = e.firstName || "";
+                // var lastName = e.lastName || "";
+                // var phone = e.phone || "";
+                var productId = "PRD11";
+
+                var userUid = "";
+                var email = "";
+                var firstName = "";
+                var lastName = "";
+                var phone = "";
+
+                var idType =  "external_ID";
+                var quantity = 1;
+                var currency = "VND";
+                var eventName = "order-checkout";
+                var productItem = { "itemtId": productId, "idType": idType, quantity: quantity };
+
+                var eventData = { "productIds": productId, "idType": idType };
+                eventData["primaryPhone"] = phone;
+                eventData["primaryEmail"] = email;
+                eventData["firstName"] = firstName;
+                eventData["lastName"] = lastName;
+                eventData["ecommerceUserId"] = userUid;
+
+                var shoppingItems = [];
+                shoppingItems.push(productItem);
+                LeoObserverProxy.recordConversionEvent(eventName, eventData,"", shoppingItems,0, currency);
+            }
+                
+        </script>
+    </body>
+</html>
